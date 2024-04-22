@@ -27,7 +27,7 @@ for z in range(10):
         sphere = Entity(model='sphere', color=color.blue, position=(25, x, x), parent=scene, orgin_y=4)
         sphere.collider = SphereCollider(sphere, center=Vec3(0,0.5,0), radius=0.5)
 player = FirstPersonController()
-player.gravity = 0.4
+player.gravity = 0.5
 player.mouse_sensitivity = Vec3(80 ,80 ,80)
 
 def update():

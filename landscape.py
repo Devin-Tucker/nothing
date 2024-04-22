@@ -31,5 +31,4 @@ while running:
         player_y += player_speed
     pygame.draw.rect(window, (255, 255, 255), (player_x, player_y, player_width, player_height))
     pygame.display.flip()
-
 pygame.quit()
