@@ -1,8 +1,7 @@
 import ursina
 from ursina import *
-from ursina.prefabs.first_person_controller import FirstPersonController
+from fpc import FirstPersonController
 
-app = ursina.Ursina()
 app = Ursina()
 
 for z in range(10):
