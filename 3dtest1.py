@@ -14,7 +14,7 @@ player.gravity = 0.5
 player.mouse_sensitivity = Vec3(80 ,80 ,80)
 
 
-gun = Entity(model='cube', color=color.gold, position=(1, 1, 1), parent=player, scale=(0.1, 0.1, 1))
+gun = Entity(model='cube', color=color.gold, position=(1, 3, 1), parent=player, scale=(0.1, 0.1, 1))
 gun_model = load_model('path_to_your_gun_model')
 gun.scale = (0.5, 0.2, 1)
 
@@ -24,21 +24,23 @@ class Bullet(Entity):
 
         self.velocity = direction * speed 
         self.lifetime = lifetime
+        self.gravity = 0
 
     def update(self):
         self.position += self.velocity * time.dt
         self.lifetime -= time.dt
+        self.velocity.y -= time.dt * 3
 
-        if self.lifetime <= 0:
-            destroy(self)
+
 
 def input(key):
     if key == 'left mouse down':
-        bullet = Bullet(direction=gun.forward, speed=10)
+        bullet = Bullet(direction=gun.forward, speed=20)
 
 def update():
     gun.rotation_x = player.camera_pivot.rotation_x
-
+    gun.y = 1.5 + (player.camera_pivot.rotation_y + -1.5 * math.sin(math.radians(player.camera_pivot.rotation_x)))
+    
     if held_keys['r']:
         player.y = 20
 
