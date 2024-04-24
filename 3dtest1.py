@@ -24,7 +24,6 @@ class Bullet(Entity):
 
         self.velocity = direction * speed 
         self.lifetime = lifetime
-        self.gravity = 0
 
     def update(self):
         self.position += self.velocity * time.dt
