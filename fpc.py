@@ -1,4 +1,5 @@
 from ursina import *
+from ursina import curve
 
 
 class FirstPersonController(Entity):
