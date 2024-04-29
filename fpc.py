@@ -43,7 +43,7 @@ class FirstPersonController(Entity):
         self.rotation_y += mouse.velocity[0] * self.mouse_sensitivity[1]
 
         self.camera_pivot.rotation_x -= mouse.velocity[1] * self.mouse_sensitivity[0]
-        self.camera_pivot.rotation_x= clamp(self.camera_pivot.rotation_x, -90, 90)
+        self.camera_pivot.rotation_x= clamp(self.camera_pivot.rotation_x, -90, 60)
 
         self.direction = Vec3(
             self.forward * (held_keys['w'] - held_keys['s'])
